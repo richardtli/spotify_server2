@@ -1,6 +1,8 @@
 const express = require('express')
 const request = require('request');
 const dotenv = require('dotenv');
+const cors = require("cors");
+
 
 const port = process.env.PORT || 3001;
 
@@ -24,6 +26,7 @@ var generateRandomString = function (length) {
 };
 
 var app = express();
+app.use(cors());
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 server.keepAliveTimeout = 120 * 1000;
