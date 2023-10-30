@@ -24,6 +24,10 @@ var generateRandomString = function (length) {
 };
 
 var app = express();
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+server.keepAliveTimeout = 120 * 1000;
+server.headersTimeout = 120 * 1000;
 
 app.get('/auth/login', (req, res) => {
 
@@ -72,7 +76,4 @@ app.get('/auth/token', (req, res) => {
   res.json({ access_token: access_token})
 })
 
-const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-server.keepAliveTimeout = 120 * 1000;
-server.headersTimeout = 120 * 1000;
