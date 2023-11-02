@@ -13,7 +13,7 @@ dotenv.config()
 var spotify_client_id = process.env.SPOTIFY_CLIENT_ID
 var spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
 
-var spotify_redirect_uri = 'https://localhost:3000/auth/callback'
+var spotify_redirect_uri = 'https://spotify-vizualizer.netlify.app/auth/callback'
 
 var generateRandomString = function (length) {
   var text = '';
@@ -30,8 +30,8 @@ app.use(cors());
 app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  // res.setHeader('Access-Control-Allow-Origin', 'https://comforting-quokka-eb41c2.netlify.app');
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Origin', 'https://spotify-vizualizer.netlify.app');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
