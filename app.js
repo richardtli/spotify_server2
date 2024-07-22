@@ -13,7 +13,7 @@ dotenv.config()
 var spotify_client_id = process.env.SPOTIFY_CLIENT_ID
 var spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
 
-var spotify_redirect_uri = 'https://spotify-vizualizer.netlify.app/auth/callback'
+var spotify_redirect_uri = 'https://spotify-vizualizer.netlify.app'
 
 var generateRandomString = function (length) {
   var text = '';
